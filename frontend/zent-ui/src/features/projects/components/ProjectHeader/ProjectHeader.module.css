@@ -1,0 +1,84 @@
+.projectHeader {
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 36px;
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+
+  color: #171b2a;
+}
+
+.clientBadge {
+  padding: 5px 9px;
+
+  border-radius: 999px;
+  background: #eef0f8;
+  color: #667085;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.description {
+  margin: 10px 0 0;
+
+  font-size: 15px;
+  color: #667085;
+}
+
+.meta {
+  margin-top: 16px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.meta span {
+  padding: 6px 10px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #4b5565;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.secondaryButton {
+  height: 44px;
+  padding: 0 18px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #4b5565;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background: #f7f8fc;
+}

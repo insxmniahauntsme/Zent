@@ -1,0 +1,9 @@
+.sortableTask {
+  touch-action: none;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.sortableTaskDragging {
+  opacity: 0;
+}

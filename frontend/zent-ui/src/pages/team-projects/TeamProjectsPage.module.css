@@ -1,0 +1,221 @@
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+}
+
+.workspaceHeader {
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #4328e7;
+}
+
+.teamName {
+  margin: 0;
+
+  font-size: 36px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+
+  color: #171b2a;
+}
+
+.meta {
+  margin-top: 14px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.meta span {
+  padding: 6px 10px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #4b5565;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.divider {
+  height: 1px;
+  margin-bottom: 28px;
+  background: #e5e7ef;
+}
+
+.sectionHeader {
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.sectionTitle {
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+
+  color: #171b2a;
+}
+
+.sectionSubtitle {
+  margin: 8px 0 0;
+
+  font-size: 15px;
+  color: #667085;
+}
+
+.createButton {
+  height: 44px;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #4328e7;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(67, 40, 231, 0.18);
+}
+
+.toolbar {
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searchbar {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 360px;
+  height: 44px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 12px;
+
+  background: #ffffff;
+  padding: 0 16px 0 42px;
+
+  font-size: 14px;
+  color: #20232d;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #9aa0ad;
+}
+
+.searchInput:focus {
+  box-shadow: 0 0 0 1px rgba(67, 40, 231, 0.15);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.emptyState,
+.noResults {
+  min-height: 360px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.emptyState h2 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 900;
+  color: #20232d;
+}
+
+.emptyState p {
+  margin: 10px 0 0;
+
+  font-size: 15px;
+  color: #667085;
+}
+
+.noResults {
+  font-size: 15px;
+  color: #667085;
+}
+
+@media (max-width: 1300px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .workspaceHeader,
+  .sectionHeader {
+    flex-direction: column;
+  }
+
+  .searchbar,
+  .searchInput {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

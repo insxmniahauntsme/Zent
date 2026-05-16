@@ -1,0 +1,529 @@
+.column {
+  position: relative;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  min-width: 0;
+  min-height: 560px;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid rgba(229, 231, 239, 0.9);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  font-family: inherit;
+  transform-origin: right center;
+}
+
+/* Header */
+
+.columnHeader {
+  margin-bottom: 14px;
+  padding: 0 2px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.columnTitleBlock {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.titleContent {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.titleTextRow {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.columnTitle {
+  min-width: 0;
+  margin: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #20232d;
+
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 900;
+
+  cursor: text;
+}
+
+.taskCount {
+  display: block;
+  margin-top: 4px;
+  margin-left: 4px;
+
+  color: #8b91a1;
+
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* Drag handle */
+
+.dragHandle {
+  width: 18px;
+  height: 22px;
+  padding: 0;
+  flex: 0 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #8b91a1;
+
+  cursor: grab;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.dragHandle:hover {
+  background: rgba(67, 40, 231, 0.08);
+  color: #4328e7;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+  transform: scale(0.94);
+}
+
+.dragHandle span {
+  width: 10px;
+  height: 14px;
+
+  display: block;
+
+  background:
+    radial-gradient(circle at 2px 2px, currentColor 1.5px, transparent 1.6px),
+    radial-gradient(circle at 8px 2px, currentColor 1.5px, transparent 1.6px),
+    radial-gradient(circle at 2px 7px, currentColor 1.5px, transparent 1.6px),
+    radial-gradient(circle at 8px 7px, currentColor 1.5px, transparent 1.6px),
+    radial-gradient(circle at 2px 12px, currentColor 1.5px, transparent 1.6px),
+    radial-gradient(circle at 8px 12px, currentColor 1.5px, transparent 1.6px);
+
+  background-repeat: no-repeat;
+}
+
+/* Title edit mode */
+
+.titleInput {
+  width: 100%;
+  height: 30px;
+  padding: 0 6px;
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  background: transparent;
+  color: #20232d;
+
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+
+  outline: none;
+
+  transition:
+    border-color 0.16s ease,
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.titleInput:focus {
+  border-color: rgba(67, 40, 231, 0.5);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 0 0 3px rgba(67, 40, 231, 0.08);
+}
+
+.titleInput:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.titleError {
+  margin: 6px 0 0;
+
+  color: #dc2626;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Header actions */
+
+.columnControls {
+  height: 26px;
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  opacity: 0;
+  transform: translateY(-1px);
+  pointer-events: none;
+
+  transition:
+    opacity 0.16s ease,
+    transform 0.18s ease;
+}
+
+.column:hover .columnControls,
+.column:focus-within .columnControls {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.editTitleButton {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  flex: 0 0 26px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #8b91a1;
+
+  opacity: 0;
+  transform: translateX(-2px);
+  pointer-events: none;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.16s ease,
+    transform 0.18s ease,
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.column:hover .editTitleButton,
+.column:focus-within .editTitleButton {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.editTitleButton:hover {
+  background: rgba(67, 40, 231, 0.08);
+  color: #4328e7;
+}
+
+.editTitleButton img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Final switch */
+
+.finalControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
+}
+
+.column:hover .finalControl,
+.column:focus-within .finalControl {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.finalControlActive {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.finalLabel {
+  color: #8b91a1;
+
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
+
+  user-select: none;
+}
+
+.finalSwitch {
+  width: 34px;
+  height: 20px;
+  padding: 2px;
+  flex: 0 0 34px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #d8deea;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease,
+    transform 0.16s ease;
+}
+
+.finalSwitch:hover {
+  box-shadow: 0 0 0 4px rgba(67, 40, 231, 0.08);
+}
+
+.finalSwitch:active {
+  transform: scale(0.96);
+}
+
+.finalSwitch span {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.16),
+    0 1px 4px rgba(16, 24, 40, 0.12);
+
+  transform: translateX(0);
+
+  transition: transform 0.18s ease;
+}
+
+.finalSwitchActive {
+  background: #4328e7;
+}
+
+.finalSwitchActive span {
+  transform: translateX(14px);
+}
+
+.finalSwitchActive .finalSwitchThumb {
+  transform: translateY(-50%) translateX(14px);
+}
+
+/* Delete column */
+
+.deleteColumnButton {
+  position: relative;
+
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  flex: 0 0 26px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  opacity: 0.68;
+  cursor: pointer;
+
+  transition:
+    opacity 0.16s ease,
+    background 0.16s ease,
+    transform 0.16s ease;
+}
+
+.deleteColumnButton:hover {
+  opacity: 1;
+  background: rgba(255, 54, 54, 0.16);
+}
+
+.deleteColumnButton:active {
+  transform: scale(0.94);
+}
+
+.deleteColumnButton img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 20px;
+  height: 20px;
+
+  display: block;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Tasks */
+
+.taskList {
+  flex: 1;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  position: relative;
+}
+
+.addTaskButton {
+  height: 0;
+  min-height: 0;
+  padding: 0;
+
+  border: 1px dashed transparent;
+  border-radius: 14px;
+
+  background: transparent;
+  color: #667085;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition:
+    height 0.18s ease,
+    min-height 0.18s ease,
+    padding 0.18s ease,
+    opacity 0.18s ease,
+    transform 0.22s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.taskListDragging .addTaskButton {
+  pointer-events: none;
+}
+
+.column:hover .addTaskButton,
+.column:focus-within .addTaskButton {
+  height: 52px;
+  min-height: 52px;
+  padding: 0 12px;
+
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+
+  border-color: #cbd0df;
+}
+
+.addTaskButton:hover {
+  border-color: rgba(67, 40, 231, 0.35);
+  background: rgba(67, 40, 231, 0.035);
+  color: #4328e7;
+}
+
+/* Enter animation */
+
+.columnEnter {
+  animation: columnEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes columnEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(80px) scale(0.94);
+    filter: blur(3px);
+    border-color: rgba(67, 40, 231, 0.55);
+    background: rgba(67, 40, 231, 0.09);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateX(0) scale(1.015);
+    filter: blur(0);
+    border-color: rgba(67, 40, 231, 0.38);
+    background: rgba(67, 40, 231, 0.055);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+    border-color: rgba(229, 231, 239, 0.9);
+    background: rgba(255, 255, 255, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .columnEnter {
+    animation: none;
+  }
+
+  .addTaskButton,
+  .editTitleButton,
+  .columnControls,
+  .dragHandle,
+  .finalSwitch,
+  .finalSwitchThumb,
+  .deleteColumnButton,
+  .titleInput {
+    transition: none;
+  }
+}

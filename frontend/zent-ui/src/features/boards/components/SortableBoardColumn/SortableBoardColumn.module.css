@@ -1,0 +1,11 @@
+.sortableColumn {
+  min-width: 0;
+  touch-action: none;
+  will-change: transform;
+}
+
+.sortableColumnDragging {
+  z-index: 50;
+  opacity: 0.88;
+  cursor: grabbing;
+}

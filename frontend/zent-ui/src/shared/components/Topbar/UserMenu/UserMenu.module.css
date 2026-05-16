@@ -1,0 +1,102 @@
+.menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 260px;
+  padding: 10px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 16px;
+
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.14);
+
+  z-index: 50;
+}
+
+.userPreview {
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background: #4328e7;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.userInfo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 800;
+  color: #20232d;
+}
+
+.userEmail {
+  font-size: 13px;
+  color: #8b91a1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.divider {
+  height: 1px;
+  margin: 8px 0;
+  background: #eef0f5;
+}
+
+.item {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+  color: #3b4252;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #f5f6fb;
+}
+
+.dangerItem {
+  color: #dc2626;
+}
+
+.dangerItem:hover {
+  background: #fff1f2;
+}

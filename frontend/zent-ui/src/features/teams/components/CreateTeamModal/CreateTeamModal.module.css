@@ -1,0 +1,208 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(15, 23, 42, 0.36);
+  backdrop-filter: blur(6px);
+}
+
+.modal {
+  width: 100%;
+  max-width: 520px;
+
+  border-radius: 22px;
+  background: #ffffff;
+
+  box-shadow: 0 30px 90px rgba(15, 23, 42, 0.24);
+  overflow: visible;
+}
+
+.header {
+  padding: 26px 28px 22px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-bottom: 1px solid #eef0f5;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #171b2a;
+}
+
+.header p {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #667085;
+}
+
+.closeButton {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #f4f5fa;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.closeButton img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.form {
+  padding: 26px 28px 28px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #3b4252;
+}
+
+.field input {
+  height: 52px;
+  border: 1px solid #e5e7ef;
+  border-radius: 14px;
+
+  background: #f7f8fc;
+  padding: 0 16px;
+
+  font-size: 15px;
+  color: #20232d;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: rgba(67, 40, 231, 0.35);
+  box-shadow: 0 0 0 3px rgba(67, 40, 231, 0.08);
+}
+
+.error {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #ef4444;
+}
+
+.membersBox {
+  margin-top: 22px;
+  padding: 18px;
+
+  border: 1px dashed #d9ddea;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  background: #fafbff;
+}
+
+.membersBox h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #20232d;
+}
+
+.membersBox p {
+  max-width: 260px;
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #667085;
+}
+
+.secondaryButton {
+  height: 40px;
+  padding: 0 14px;
+
+  border: 1px solid #e2e5ef;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #8a90a0;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.submitError {
+  margin-top: 18px;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  background: #fff1f2;
+  color: #be123c;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.actions {
+  margin-top: 28px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancelButton,
+.createButton {
+  height: 46px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.cancelButton {
+  background: #f1f2f7;
+  color: #4b5565;
+}
+
+.createButton {
+  background: #4328e7;
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(67, 40, 231, 0.18);
+}
+
+.createButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}

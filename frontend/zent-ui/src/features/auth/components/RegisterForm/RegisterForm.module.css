@@ -1,0 +1,232 @@
+.formWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #20232d;
+}
+
+.subtitle {
+  margin: 0 0 32px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #6d7280;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #3b4252;
+}
+
+.passwordInputWrapper {
+  position: relative;
+}
+
+.eyeButton {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.input {
+  width: 100%;
+  height: 58px;
+  border: none;
+  border-radius: 16px;
+  background: #ececf4;
+  padding: 0 18px;
+  font-size: 16px;
+  color: #232734;
+  outline: none;
+}
+
+.inputError {
+  box-shadow: 0 0 0 2px rgba(214, 69, 69, 0.15);
+  border: 1px solid rgba(214, 69, 69, 0.45);
+}
+
+.input::placeholder {
+  color: #a0a6b4;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px rgba(77, 56, 229, 0.16);
+}
+
+.hint {
+  margin: 0;
+  font-size: 13px;
+  color: #8b91a1;
+  font-style: italic;
+}
+
+.submitFormButton {
+  margin-top: 8px;
+  height: 60px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #4328e7 0%, #5c47f3 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(76, 51, 227, 0.22);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submitFormButton:hover {
+  box-shadow: 0 18px 34px rgba(76, 51, 227, 0.28);
+}
+
+.submitFormButton:active {
+  transform: scale(0.99);
+}
+
+.errorText {
+  margin: 3px 5px 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #d64545;
+  font-weight: 500;
+}
+
+.submitFormButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.buttonIcon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.divider {
+  height: 1px;
+  background: #e3e5ee;
+  margin: 28px 0;
+}
+
+.accountExistence {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  font-size: 16px;
+  color: #5f6473;
+}
+
+.accountExistence a {
+  color: #4d38e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.socialsContainer {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.socialButton {
+  flex: 1;
+  height: 56px;
+  border: none;
+  border-radius: 16px;
+  background: #ebedf7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #232734;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.socialButton:hover {
+  background: #e5e7f1;
+}
+
+.socialButton:active {
+  transform: scale(0.98);
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.legalText {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #9aa0ad;
+}
+
+.legalText a {
+  color: inherit;
+}

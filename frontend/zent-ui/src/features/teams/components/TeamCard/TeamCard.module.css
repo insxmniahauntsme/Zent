@@ -1,0 +1,105 @@
+.card {
+  min-height: 180px;
+  padding: 18px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 14px;
+
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  border-color: rgba(67, 40, 231, 0.2);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 10px;
+  background: #eef0ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 800;
+  color: #4328e7;
+  font-size: 14px;
+}
+
+.role {
+  font-size: 11px;
+  font-weight: 700;
+
+  padding: 5px 8px;
+  border-radius: 8px;
+
+  background: #f0f1f6;
+  color: #4b5565;
+}
+
+.name {
+  margin: 20px 0 16px;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: #171b2a;
+}
+
+.stats {
+  margin-top: auto;
+
+  display: flex;
+  gap: 12px;
+
+  font-size: 13px;
+  color: #667085;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+}
+
+.statIcon {
+  width: 20px;
+  height: 20px;
+  color: black;
+}
+
+.footer {
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #4328e7;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #c0c4d4;
+}

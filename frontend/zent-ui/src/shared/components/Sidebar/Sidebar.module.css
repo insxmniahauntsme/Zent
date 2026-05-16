@@ -1,0 +1,94 @@
+.sidebar {
+  position: relative;
+  height: 100vh;
+  background: #eef4fc;
+  flex-shrink: 0;
+}
+
+.content {
+  height: 100%;
+  padding: 24px 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.resizer {
+  position: absolute;
+  top: 0;
+  right: -4px;
+
+  width: 8px;
+  height: 100%;
+
+  cursor: col-resize;
+  z-index: 10;
+}
+
+.resizer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 4px;
+
+  width: 2px;
+  height: 100%;
+
+  background: #dfe4ee;
+  transition: background 0.15s ease;
+}
+
+.resizer:hover::before,
+.resizerActive::before {
+  background: #4328e7;
+}
+
+.logo {
+  margin-bottom: 40px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #4328e7;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navItem {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+
+  color: #4b5565;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navItem:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.active {
+  background: white;
+  color: #4328e7;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.createTaskButton {
+  margin-top: auto;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #4328e7;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}

@@ -1,0 +1,240 @@
+.selector {
+  margin-top: 22px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #3b4252;
+}
+
+.searchWrapper {
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  height: 52px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 14px;
+
+  background: #f7f8fc;
+
+  padding: 14px 16px;
+
+  font-size: 15px;
+  line-height: 1.4;
+  font-family: inherit;
+
+  color: #20232d;
+  outline: none;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.searchInput:focus {
+  border-color: rgba(67, 40, 231, 0.35);
+  box-shadow: 0 0 0 3px rgba(67, 40, 231, 0.08);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+
+  max-height: 220px;
+  overflow-y: auto;
+
+  z-index: 20;
+
+  padding: 8px;
+  border: 1px solid #e5e7ef;
+  border-radius: 14px;
+
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.dropdownState {
+  padding: 12px;
+  color: #667085;
+  font-size: 14px;
+}
+
+.dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.userOption {
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.userOption:hover {
+  background: #f5f6fb;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eef0ff;
+  color: #4328e7;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.userInfo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 🔥 FIXED */
+.userName {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #20232d;
+}
+
+.userEmail {
+  display: block;
+  max-width: 100%;
+
+  font-size: 13px;
+  line-height: 1.45;
+  color: #667085;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  padding-bottom: 1px; /* 👈 ключовий фікс */
+}
+
+.selectedList {
+  margin-top: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.selectedItem {
+  padding: 10px;
+
+  border: 1px solid #edf0f6;
+  border-radius: 14px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+}
+
+.roleControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.roleLabel {
+  min-width: 48px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #4b5565;
+}
+
+.switch {
+  width: 42px;
+  height: 24px;
+  padding: 2px;
+
+  border: none;
+  border-radius: 999px;
+  background: #dfe3ee;
+
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.switch span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  background: white;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.18);
+
+  transition: transform 0.18s ease;
+}
+
+.switchOn {
+  background: #4328e7;
+}
+
+.switchOn span {
+  transform: translateX(18px);
+}
+
+.removeButton {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #f4f5fa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.removeButton img {
+  width: 14px;
+  height: 14px;
+  opacity: 0.65;
+}

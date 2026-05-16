@@ -1,0 +1,70 @@
+.layout {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: #f7f7fb;
+}
+
+.contentArea {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  min-height: 0;
+
+  padding: 48px 40px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+
+  background: #f7f7fb;
+}
+
+.workspaceHeader {
+  margin-bottom: 22px;
+  padding: 0 4px;
+}
+
+.workspaceLabel {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  font-weight: 700;
+  color: #8b91a1;
+}
+
+.workspaceName {
+  display: block;
+
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #20232d;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.state {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f7fb;
+  color: #667085;
+
+  font-size: 15px;
+}

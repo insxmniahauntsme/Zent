@@ -1,0 +1,172 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  background: rgba(15, 23, 42, 0.32);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 100%;
+  max-width: 460px;
+  padding: 22px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 18px;
+
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.header h2 {
+  margin: 0;
+
+  color: #171b2a;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.header p {
+  margin: 8px 0 0;
+
+  color: #667085;
+  font-size: 14px;
+}
+
+.closeButton {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #667085;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #f7f8fc;
+}
+
+.form {
+  margin-top: 22px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field span {
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+
+  border: 1px solid #e5e7ef;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #20232d;
+
+  font: inherit;
+  font-size: 14px;
+
+  outline: none;
+}
+
+.field input {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.field textarea {
+  min-height: 96px;
+  padding: 12px;
+
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(67, 40, 231, 0.45);
+  box-shadow: 0 0 0 4px rgba(67, 40, 231, 0.08);
+}
+
+.error {
+  margin: 0;
+
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.actions {
+  margin-top: 4px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelButton,
+.submitButton {
+  height: 42px;
+  padding: 0 16px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.cancelButton {
+  border: 1px solid #e5e7ef;
+  background: #ffffff;
+  color: #4b5565;
+}
+
+.submitButton {
+  border: none;
+  background: #4328e7;
+  color: #ffffff;
+
+  box-shadow: 0 12px 24px rgba(67, 40, 231, 0.18);
+}
+
+.cancelButton:disabled,
+.submitButton:disabled,
+.closeButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}

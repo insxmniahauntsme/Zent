@@ -1,0 +1,150 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(15, 18, 32, 0.38);
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  width: min(100%, 420px);
+  padding: 22px;
+
+  border: 1px solid rgba(229, 231, 239, 0.9);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(17, 24, 39, 0.2);
+
+  animation: modalEnter 0.18s ease both;
+}
+
+.iconWrap {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: rgba(220, 38, 38, 0.08);
+  color: #dc2626;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.content h2 {
+  margin: 0;
+
+  color: #20232d;
+
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.content p {
+  margin: 10px 0 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.content strong {
+  color: #20232d;
+  font-weight: 900;
+}
+
+.warning {
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  background: rgba(220, 38, 38, 0.06);
+  color: #b91c1c !important;
+}
+
+.actions {
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelButton,
+.deleteButton {
+  height: 40px;
+  padding: 0 14px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.16s ease,
+    opacity 0.16s ease,
+    background 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.cancelButton {
+  border: 1px solid #e5e7ef;
+  background: #ffffff;
+  color: #667085;
+}
+
+.cancelButton:hover {
+  border-color: #d8ddea;
+  background: #f8f8fb;
+}
+
+.deleteButton {
+  border: none;
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.deleteButton:hover {
+  background: #b91c1c;
+}
+
+.cancelButton:active,
+.deleteButton:active {
+  transform: scale(0.97);
+}
+
+.cancelButton:disabled,
+.deleteButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

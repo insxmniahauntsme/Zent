@@ -1,0 +1,109 @@
+.boardWrap {
+  --column-gap: 18px;
+  --column-width: max(320px, calc((100% - 54px) / 4));
+
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--column-gap);
+
+  overflow: hidden;
+}
+
+.kanban {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--column-gap);
+
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.sortableColumn {
+  width: var(--column-width);
+  min-width: var(--column-width);
+  max-width: var(--column-width);
+  flex: 0 0 var(--column-width);
+
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.sortableColumnDragging {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.columnSlot {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.dragOverlayColumn {
+  width: var(--drag-column-width);
+  min-width: var(--drag-column-width);
+  max-width: var(--drag-column-width);
+
+  pointer-events: none;
+  cursor: grabbing;
+  transform-origin: center center;
+
+  filter: drop-shadow(0 18px 32px rgba(17, 24, 39, 0.16));
+}
+
+.addColumnSlot {
+  flex: 0 0 12px;
+  min-width: 12px;
+  min-height: 560px;
+
+  overflow: hidden;
+
+  transition: flex-basis 0.28s ease;
+}
+
+.boardWrapExpanded .addColumnSlot {
+  flex-basis: 280px;
+}
+
+.dropIndicator {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  z-index: 80;
+
+  width: 3px;
+  border-radius: 999px;
+
+  background: #4328e7;
+  box-shadow: 0 0 0 4px rgba(67, 40, 231, 0.1);
+
+  pointer-events: none;
+}
+
+.dropIndicatorLeft {
+  left: -10px;
+}
+
+.dropIndicatorRight {
+  right: -10px;
+}
+
+.dragOverlayTask {
+  width: var(--drag-task-width);
+  min-width: var(--drag-task-width);
+  max-width: var(--drag-task-width);
+
+  pointer-events: none;
+  cursor: grabbing;
+
+  transform-origin: center center;
+  filter: drop-shadow(0 16px 28px rgba(17, 24, 39, 0.16));
+}

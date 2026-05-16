@@ -1,0 +1,166 @@
+.topbar {
+  height: 84px;
+  padding: 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #f7f7fb;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8b91a1;
+}
+
+.breadcrumb strong {
+  color: #20232d;
+  font-weight: 800;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  width: 320px;
+  height: 46px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: #f0f1f8;
+  padding: 0 18px 0 46px;
+
+  font-size: 15px;
+  color: #20232d;
+
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #9aa0ad;
+}
+
+.search input:focus {
+  box-shadow: 0 0 0 2px rgba(67, 40, 231, 0.15);
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  width: 19px;
+  height: 19px;
+
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actions button {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #eef0f8;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+.userBlock {
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.userName {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #20232d;
+}
+
+.userEmail {
+  max-width: 190px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #8b91a1;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  padding-bottom: 1px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: #4328e7;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.userMenuWrapper {
+  position: relative;
+}
