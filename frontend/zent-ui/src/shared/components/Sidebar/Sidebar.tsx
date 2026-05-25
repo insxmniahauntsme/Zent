@@ -1,12 +1,14 @@
 import { useState, type ReactNode } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+
 import styles from "./Sidebar.module.css";
 
-export interface SidebarItem {
+interface SidebarItem {
   label: string;
   to: string;
-  icon?: string;
+  icon: string;
   end?: boolean;
+  activeWhen?: (pathname: string) => boolean;
 }
 
 export interface SidebarBottomAction {
@@ -25,6 +27,8 @@ const MAX_WIDTH = 360;
 const DEFAULT_WIDTH = 260;
 
 const Sidebar = ({ items, header, bottomAction }: SidebarProps) => {
+  const location = useLocation();
+
   const [width, setWidth] = useState(DEFAULT_WIDTH);
   const [isResizing, setIsResizing] = useState(false);
 
@@ -42,7 +46,9 @@ const Sidebar = ({ items, header, bottomAction }: SidebarProps) => {
     const handleMouseMove = (moveEvent: MouseEvent) => {
       const nextWidth = startWidth + (moveEvent.clientX - startX);
 
-      if (nextWidth < MIN_WIDTH || nextWidth > MAX_WIDTH) return;
+      if (nextWidth < MIN_WIDTH || nextWidth > MAX_WIDTH) {
+        return;
+      }
 
       setWidth(nextWidth);
     };
@@ -74,13 +80,19 @@ const Sidebar = ({ items, header, bottomAction }: SidebarProps) => {
               key={item.to}
               to={item.to}
               end={item.end}
-              className={({ isActive }) =>
-                `${styles.navItem} ${isActive ? styles.active : ""}`
-              }
+              className={({ isActive }) => {
+                const isCustomActive =
+                  item.activeWhen?.(location.pathname) ?? false;
+
+                return `${styles.navItem} ${
+                  isActive || isCustomActive ? styles.active : ""
+                }`;
+              }}
             >
               {item.icon && (
                 <img src={item.icon} className={styles.icon} alt="" />
               )}
+
               <span>{item.label}</span>
             </NavLink>
           ))}

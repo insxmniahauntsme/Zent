@@ -11,11 +11,14 @@ export const usersApi = {
     return response.data;
   },
 
-  async searchUsers(query: string): Promise<UserSearchDto[]> {
-    const response = await httpClient.get<SearchUsersResponse>("/users", {
-      params: { query },
-    });
+  async searchUsers(teamId: string, query: string): Promise<UserSearchDto[]> {
+    const response = await httpClient.get<SearchUsersResponse>(
+      `/teams/${teamId}/users`,
+      {
+        params: { query },
+      },
+    );
 
-    return response.data.users;
+    return response.data.users ?? [];
   },
 };

@@ -1,0 +1,281 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  padding: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(15, 23, 42, 0.36);
+  backdrop-filter: blur(8px);
+}
+
+.modal {
+  width: min(100%, 620px);
+  max-height: calc(100vh - 48px);
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid rgba(229, 231, 239, 0.95);
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.18),
+    0 2px 8px rgba(15, 23, 42, 0.06);
+
+  overflow: hidden;
+  animation: modalEnter 0.2s ease both;
+}
+
+.header {
+  padding: 22px 24px 18px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+
+  border-bottom: 1px solid rgba(229, 231, 239, 0.75);
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #4328e7;
+
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.header h2 {
+  margin: 0;
+
+  color: #20232d;
+
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+.header p {
+  max-width: 440px;
+  margin: 8px 0 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.closeButton {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  flex: 0 0 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #f4f5fa;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    transform 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.closeButton:hover {
+  background: #eef0f8;
+}
+
+.closeButton:active {
+  transform: scale(0.96);
+}
+
+.closeButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.closeButton img {
+  width: 15px;
+  height: 15px;
+  display: block;
+
+  opacity: 0.65;
+}
+
+.body {
+  padding: 2px 24px 22px;
+
+  overflow-y: auto;
+}
+
+.body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.body::-webkit-scrollbar-thumb {
+  background: #d7dbe7;
+  border-radius: 999px;
+}
+
+.error {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+
+  border: 1px solid rgba(147, 0, 10, 0.13);
+  border-radius: 14px;
+
+  background: #ffdad6;
+  color: #93000a;
+
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+.footer {
+  padding: 16px 24px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  border-top: 1px solid rgba(229, 231, 239, 0.75);
+  background: rgba(247, 248, 252, 0.7);
+}
+
+.cancelButton,
+.submitButton {
+  height: 42px;
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease,
+    transform 0.16s ease,
+    opacity 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.cancelButton {
+  border: 1px solid #e5e7ef;
+  background: #ffffff;
+  color: #667085;
+}
+
+.cancelButton:hover {
+  border-color: rgba(67, 40, 231, 0.18);
+  background: #f7f8fc;
+  color: #20232d;
+}
+
+.submitButton {
+  min-width: 138px;
+
+  border: none;
+  background: #4328e7;
+  color: #ffffff;
+
+  box-shadow: 0 10px 24px rgba(67, 40, 231, 0.2);
+}
+
+.submitButton:hover {
+  background: #3820d6;
+  box-shadow: 0 14px 30px rgba(67, 40, 231, 0.25);
+}
+
+.cancelButton:active,
+.submitButton:active {
+  transform: scale(0.98);
+}
+
+.cancelButton:disabled,
+.submitButton:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .overlay {
+    padding: 14px;
+    align-items: flex-end;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: calc(100vh - 28px);
+
+    border-radius: 22px;
+  }
+
+  .header {
+    padding: 20px 18px 16px;
+  }
+
+  .body {
+    padding: 0 18px 20px;
+  }
+
+  .footer {
+    padding: 14px 18px 18px;
+    flex-direction: column-reverse;
+  }
+
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+  }
+}

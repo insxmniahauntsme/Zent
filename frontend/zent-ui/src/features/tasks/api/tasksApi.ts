@@ -1,5 +1,6 @@
 import { httpClient } from "@/shared/api/httpClient";
 import type {
+  AddTaskAssigneeRequest,
   AddTaskRequest,
   MoveTaskRequest,
   TaskDetailsDto,
@@ -34,5 +35,22 @@ export const tasksApi = {
     data: MoveTaskRequest,
   ): Promise<void> {
     await httpClient.patch(`/boards/${boardId}/tasks/${taskId}/move`, data);
+  },
+
+  async addTaskAssignee(
+    boardId: string,
+    taskId: string,
+    data: AddTaskAssigneeRequest,
+  ): Promise<void> {
+    await httpClient.patch(
+      `/boards/${boardId}/tasks/${taskId}/assignee/`,
+      data,
+    );
+  },
+
+  async removeTaskAssignee(boardId: string, taskId: string): Promise<void> {
+    await httpClient.delete(
+      `/boards/${boardId}/tasks/${taskId}/assignee/remove`,
+    );
   },
 };

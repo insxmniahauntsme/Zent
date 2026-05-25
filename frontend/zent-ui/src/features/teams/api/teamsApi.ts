@@ -1,6 +1,8 @@
 import { httpClient } from "@/shared/api/httpClient";
 import type {
+  AddTeamMembersRequest,
   AddTeamRequest,
+  GetTeamMembersResponse,
   GetTeamResponse,
   TeamDto,
   TeamMemberDto,
@@ -36,5 +38,20 @@ export const teamsApi = {
     );
 
     return response.data.members;
+  },
+
+  async getTeamMembers(teamId: string): Promise<TeamMemberDto[]> {
+    const response = await httpClient.get<GetTeamMembersResponse>(
+      `/teams/${teamId}/members`,
+    );
+
+    return response.data.members ?? [];
+  },
+
+  async addTeamMembers(
+    teamId: string,
+    data: AddTeamMembersRequest,
+  ): Promise<void> {
+    await httpClient.post(`/teams/${teamId}/members`, data);
   },
 };

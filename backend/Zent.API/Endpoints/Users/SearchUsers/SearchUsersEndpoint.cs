@@ -11,7 +11,7 @@ internal sealed class SearchUsersEndpoint : IEndpoint
 {
     public RouteHandlerBuilder Map(IEndpointRouteBuilder app)
     {
-        return app.MapGet("/users", Handle)
+        return app.MapGet("/teams/{teamId:guid}/users", Handle)
             .WithName("SearchUser")
             .WithTags("Users")
             .WithSummary("Search for users by name or email.")
@@ -20,6 +20,7 @@ internal sealed class SearchUsersEndpoint : IEndpoint
 
     private static async Task<IResult> Handle(
         ClaimsPrincipal user,
+        Guid teamId,
         [AsParameters] SearchUsersRequest request,
         ICqrsDispatcher dispatcher,
         IValidator<SearchUsersRequest> validator,
@@ -27,7 +28,9 @@ internal sealed class SearchUsersEndpoint : IEndpoint
     {
         await validator.ValidateAndThrowAsync(request, ct);
         
-        var query = new SearchUsersQuery(user.GetRequiredUserId(), request.Query);
+        var userId = user.GetRequiredUserId();
+        
+        var query = new SearchUsersQuery(userId, teamId, request.Query);
         
         var data = await dispatcher.Send(query, ct);
 

@@ -40,10 +40,10 @@ export const router = createBrowserRouter([
         index: true,
         element: <TeamProjectsPage />,
       },
-      {
-        path: "members",
-        element: <div>Members page</div>,
-      },
+      // {
+      //   path: "members",
+      //   element: <TeamMembersPage />,
+      // },
       {
         path: "settings",
         element: <div>Team settings page</div>,

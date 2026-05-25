@@ -15,6 +15,7 @@ public static class ErrorCodes
     public const string TeamAlreadyExists = "team_already_exists";
     public const string TeamNotFound = "team_not_found";
     public const string TeamAccessDenied = "team_access_denied";
+    public const string TeamMemberAlreadyExists = "team_member_already_exists";
     
     // project
     public const string ProjectAlreadyExists = "project_already_exists";

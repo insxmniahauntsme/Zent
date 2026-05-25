@@ -1,0 +1,511 @@
+.page {
+  width: 100%;
+  min-height: 100%;
+  padding: 44px 56px;
+  box-sizing: border-box;
+}
+
+.header {
+  max-width: 1080px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #4328e7;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.header h1 {
+  margin: 0;
+
+  color: #20232d;
+
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.header p {
+  margin: 8px 0 0;
+
+  color: #8b91a1;
+
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.statCard {
+  min-width: 112px;
+  height: 66px;
+  padding: 0 18px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid rgba(229, 231, 239, 0.95);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, 0.03),
+    0 14px 32px rgba(17, 24, 39, 0.04);
+}
+
+.statCard_members .statIcon {
+  background: rgba(67, 40, 231, 0.09);
+}
+
+.statCard_admins .statIcon {
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.statCard strong {
+  color: #20232d;
+
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.04em;
+}
+
+.statCard span {
+  color: #8b91a1;
+
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.statCard > div:last-child {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.statCard > div:last-child span:first-child {
+  color: #20232d;
+
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.035em;
+}
+
+.statCard > div:last-child span:last-child {
+  color: #8b91a1;
+
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.statIcon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+.toolbar {
+  max-width: 1080px;
+  margin-top: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.searchBox {
+  position: relative;
+  flex: 1;
+  max-width: 420px;
+}
+
+.searchBox input {
+  width: 100%;
+  height: 46px;
+  box-sizing: border-box;
+
+  border: 1px solid rgba(229, 231, 239, 0.95);
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0 16px;
+
+  color: #20232d;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+
+  outline: none;
+
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    background 0.16s ease;
+}
+
+.searchBox input::placeholder {
+  color: #a1a7b5;
+}
+
+.searchBox input:focus {
+  border-color: rgba(67, 40, 231, 0.32);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(67, 40, 231, 0.075);
+}
+
+.inviteButton {
+  height: 48px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 15px;
+
+  background: #4328e7;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 850;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 22px rgba(67, 40, 231, 0.24),
+    0 2px 4px rgba(67, 40, 231, 0.14);
+
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background 0.16s ease;
+}
+
+.inviteButton:hover {
+  background: #3b22d8;
+
+  box-shadow:
+    0 13px 28px rgba(67, 40, 231, 0.28),
+    0 3px 6px rgba(67, 40, 231, 0.16);
+}
+
+.inviteButton:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.inviteButton:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.membersCard {
+  max-width: 1080px;
+  margin-top: 20px;
+
+  border: 1px solid rgba(229, 231, 239, 0.95);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, 0.03),
+    0 18px 44px rgba(17, 24, 39, 0.05);
+
+  overflow: hidden;
+}
+
+.tableHeader {
+  padding: 16px 20px;
+
+  display: grid;
+  grid-template-columns: minmax(260px, 1.4fr) 140px 170px 110px;
+  align-items: center;
+  gap: 18px;
+
+  border-bottom: 1px solid rgba(229, 231, 239, 0.82);
+
+  color: #8b91a1;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.membersList {
+  display: flex;
+  flex-direction: column;
+}
+
+.memberRow {
+  padding: 16px 20px;
+
+  display: grid;
+  grid-template-columns: minmax(260px, 1.4fr) 140px 170px 110px;
+  align-items: center;
+  gap: 18px;
+
+  border-bottom: 1px solid rgba(229, 231, 239, 0.58);
+
+  transition:
+    background 0.16s ease,
+    transform 0.16s ease;
+}
+
+.memberRow:last-child {
+  border-bottom: none;
+}
+
+.memberRow:hover {
+  background: rgba(67, 40, 231, 0.025);
+}
+
+.memberMain {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eef0ff;
+  color: #4328e7;
+
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+}
+
+.memberInfo {
+  min-width: 0;
+}
+
+.memberInfo strong {
+  display: block;
+
+  color: #20232d;
+
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.memberInfo span {
+  display: block;
+  margin-top: 4px;
+
+  color: #8b91a1;
+
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.roleBadge,
+.specializationBadge,
+.statusBadge {
+  min-height: 26px;
+  padding: 0 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 850;
+}
+
+.roleOwner {
+  background: rgba(67, 40, 231, 0.1);
+  color: #4328e7;
+}
+
+.roleAdmin {
+  background: rgba(245, 158, 11, 0.14);
+  color: #b45309;
+}
+
+.roleMember {
+  background: rgba(15, 23, 42, 0.06);
+  color: #4b5565;
+}
+
+.specializationBadge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.statusBadge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.mutedText {
+  color: #a1a7b5;
+
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.emptyState {
+  padding: 46px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  text-align: center;
+}
+
+.emptyState strong {
+  color: #20232d;
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.emptyState span {
+  color: #8b91a1;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stateCard {
+  max-width: 1080px;
+  padding: 28px;
+
+  border: 1px solid rgba(229, 231, 239, 0.95);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.72);
+  color: #667085;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+@media (max-width: 980px) {
+  .page {
+    padding: 28px;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .statCard {
+    flex: 1;
+  }
+
+  .tableHeader {
+    display: none;
+  }
+
+  .memberRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 20px;
+  }
+
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .searchBox {
+    max-width: none;
+  }
+
+  .inviteButton {
+    width: 100%;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+}
+
+.header,
+.toolbar,
+.membersCard,
+.stateCard {
+  width: min(100%, 1080px);
+  margin-left: auto;
+  margin-right: auto;
+}

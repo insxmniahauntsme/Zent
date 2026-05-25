@@ -46,3 +46,7 @@ export interface TaskDetailsDto {
 export interface TaskDetailsResponse {
   taskDetails: TaskDetailsDto;
 }
+
+export interface AddTaskAssigneeRequest {
+  assigneeId: string;
+}

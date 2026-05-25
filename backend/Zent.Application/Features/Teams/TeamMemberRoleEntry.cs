@@ -2,4 +2,4 @@
 
 namespace Zent.Application.Features.Teams;
 
-public record TeamMemberRoleEntry(Guid UserId, TeamRole Role);
+public sealed record TeamMemberRoleEntry(Guid UserId, TeamRole Role);

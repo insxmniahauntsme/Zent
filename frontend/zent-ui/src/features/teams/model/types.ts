@@ -36,6 +36,10 @@ export interface TeamProjectDto {
   boardsCount: number;
 }
 
+export interface GetTeamMembersResponse {
+  members: TeamMemberDto[];
+}
+
 export interface TeamDto {
   id: string;
   ownerId: string;
@@ -61,4 +65,8 @@ export interface TeamMemberRoleEntry {
 export interface AddTeamRequest {
   name: string;
   members?: TeamMemberRoleEntry[];
+}
+
+export interface AddTeamMembersRequest {
+  members: TeamMemberRoleEntry[];
 }

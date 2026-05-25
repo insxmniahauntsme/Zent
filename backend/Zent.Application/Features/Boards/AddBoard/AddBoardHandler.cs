@@ -56,9 +56,10 @@ internal sealed class AddBoardHandler(ZentDbContext dbContext)
             Columns =
             [
                 new ColumnEntity { Title = "Backlog", Order = 1, IsFinal = false },
-                new ColumnEntity { Title = "In Progress", Order = 2, IsFinal = false },
-                new ColumnEntity { Title = "Review", Order = 3, IsFinal = false },
-                new ColumnEntity { Title = "Done", Order = 4, IsFinal = true },
+                new ColumnEntity { Title = "To Do", Order = 2, IsFinal = false },
+                new ColumnEntity { Title = "In Progress", Order = 3, IsFinal = false },
+                new ColumnEntity { Title = "Review", Order = 4, IsFinal = false },
+                new ColumnEntity { Title = "Done", Order = 5, IsFinal = true },
             ]
         };
 

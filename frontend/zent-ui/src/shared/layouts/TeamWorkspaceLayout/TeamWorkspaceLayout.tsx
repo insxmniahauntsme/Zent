@@ -1,7 +1,9 @@
 import { Outlet, useParams } from "react-router-dom";
+
 import Sidebar from "@/shared/components/Sidebar/Sidebar";
 import Topbar from "@/shared/components/Topbar/Topbar";
 import { useTeam } from "@/features/teams/hooks/useTeam";
+
 import styles from "./TeamWorkspaceLayout.module.css";
 
 import projectsIcon from "@/assets/icons/projects-icon.svg";
@@ -21,31 +23,56 @@ const TeamWorkspaceLayout = () => {
     return <div className={styles.state}>Failed to load workspace.</div>;
   }
 
+  const teamRootPath = `/app/${team.id}`;
+
+  const isProjectsActive = (pathname: string) => {
+    if (pathname === teamRootPath) {
+      return true;
+    }
+
+    const projectPageRegex = new RegExp(`^/app/${team.id}/projects/[^/]+/?$`);
+
+    if (projectPageRegex.test(pathname)) {
+      return true;
+    }
+
+    const taskPageRegex = new RegExp(`^/app/${team.id}/tasks/[^/]+/?$`);
+
+    if (taskPageRegex.test(pathname)) {
+      return true;
+    }
+
+    return false;
+  };
+
   return (
     <div className={styles.layout}>
       <Sidebar
         items={[
           {
             label: "Projects",
-            to: `/app/${team.id}`,
+            to: teamRootPath,
             icon: projectsIcon,
             end: true,
+            activeWhen: isProjectsActive,
           },
           {
             label: "Members",
-            to: `/app/${team.id}/members`,
+            to: `${teamRootPath}/members`,
             icon: memberIcon,
+            activeWhen: (pathname) => pathname === `${teamRootPath}/members`,
           },
           {
             label: "Settings",
-            to: `/app/${team.id}/settings`,
+            to: `${teamRootPath}/settings`,
             icon: settingsIcon,
+            activeWhen: (pathname) => pathname === `${teamRootPath}/settings`,
           },
         ]}
       />
 
       <div className={styles.contentArea}>
-        <Topbar />
+        <Topbar workspaceName={team.name} />
 
         <main className={styles.main}>
           <Outlet context={{ team }} />
