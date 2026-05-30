@@ -42,7 +42,14 @@ public sealed class TestHostFixture : IAsyncLifetime
     }
     
     public async Task ResetDatabaseAsync()
-        => await _dbCleaner.ResetAsync();
+    {
+        await _dbCleaner.ResetAsync();
+
+        using var scope = WebAppFactory.Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<ZentDbContext>();
+
+        await new TestUserSeeder().SeedAsync(db);
+    }
 
     public async ValueTask DisposeAsync()
     {

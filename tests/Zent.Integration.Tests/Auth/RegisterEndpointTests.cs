@@ -27,7 +27,7 @@ public sealed class RegisterEndpointTests(TestHostFixture hostFixture)
             Email: $"test-{Guid.NewGuid()}@example.com",
             FirstName: "Test",
             LastName: "User",
-            Password: "123456");
+            Password: "password123");
         
         var response = await client.PostAsJsonAsync(Uri, request, TestContext.Current.CancellationToken);
         
@@ -56,7 +56,7 @@ public sealed class RegisterEndpointTests(TestHostFixture hostFixture)
             Email: user.Email,
             FirstName: "Test",
             LastName: "User",
-            Password: "123456");
+            Password: "password123");
         
         var response = await client.PostAsJsonAsync(Uri, request, TestContext.Current.CancellationToken);
         
@@ -74,7 +74,7 @@ public sealed class RegisterEndpointTests(TestHostFixture hostFixture)
             Email: user.Email,
             FirstName: user.FirstName,
             LastName: user.LastName,
-            Password: "123456");
+            Password: "password123");
         
         var response = await client.PostAsJsonAsync(Uri, request, TestContext.Current.CancellationToken);
         

@@ -39,6 +39,7 @@ internal sealed class GlobalExceptionHandler(
             context.Response.StatusCode = ex switch
             {
                 UnauthorizedException => StatusCodes.Status401Unauthorized,
+                ForbiddenException => StatusCodes.Status403Forbidden,
                 NotFoundException => StatusCodes.Status404NotFound,
                 ConflictException => StatusCodes.Status409Conflict,
                 _ => StatusCodes.Status500InternalServerError
